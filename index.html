@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>婚礼请柬 · 我们结婚啦</title>
+    <meta name="description" content="诚挚邀请您参加我们的婚礼" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <audio id="bgm" loop preload="none">
+      <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5d65f4c9af.mp3?filename=wedding-ambient-piano-110624.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-btn" id="musicBtn" aria-label="背景音乐开关">
+      <span>♫</span>
+    </button>
+
+    <main class="invite">
+      <section class="card hero">
+        <p class="eyebrow">Wedding Invitation</p>
+        <h1>我们结婚啦</h1>
+        <p class="names">新郎：张三 &nbsp;·&nbsp; 新娘：李四</p>
+        <p class="date">5.20</p>
+        <a href="#detail" class="btn">查看详情</a>
+      </section>
+
+      <section class="card" id="detail">
+        <h2>诚挚邀请</h2>
+        <p>
+          亲爱的家人和朋友：<br />
+          我们将携手步入婚姻殿堂，诚邀您见证这份幸福与承诺。
+        </p>
+      </section>
+
+      <section class="card info">
+        <h2>婚礼信息</h2>
+        <ul>
+          <li><strong>婚礼日期：</strong>5.20</li>
+          <li><strong>婚礼时间：</strong>12:00</li>
+          <li><strong>举办地点：</strong>XX婚礼宴会中心</li>
+          <li><strong>详细地址：</strong>XX市XX区XX路XX号</li>
+        </ul>
+      </section>
+
+      <section class="card actions">
+        <h2>到场与回执</h2>
+        <div class="action-group">
+          <a
+            class="btn"
+            id="mapBtn"
+            href="https://uri.amap.com/search?keyword=XX市XX区XX路XX号&src=mypage&callnative=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            一键导航
+          </a>
+          <button class="btn btn-light" id="rsvpBtn">填写回执</button>
+        </div>
+        <p class="tip">温馨提示：请于 5 月 10 日前回复是否出席。</p>
+      </section>
+    </main>
+
+    <dialog id="rsvpDialog">
+      <form id="rsvpForm" method="dialog">
+        <h3>婚礼回执</h3>
+        <label>
+          您的姓名
+          <input name="name" required placeholder="请输入姓名" />
+        </label>
+        <label>
+          是否出席
+          <select name="attend" required>
+            <option value="">请选择</option>
+            <option value="出席">出席</option>
+            <option value="无法出席">无法出席</option>
+          </select>
+        </label>
+        <label>
+          同行人数
+          <input type="number" name="count" min="0" max="10" value="1" />
+        </label>
+        <label>
+          留言祝福
+          <textarea name="message" rows="3" placeholder="写下祝福吧～"></textarea>
+        </label>
+        <menu>
+          <button value="cancel" class="btn btn-light" type="button" id="closeDialog">取消</button>
+          <button value="default" class="btn" type="submit">提交</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

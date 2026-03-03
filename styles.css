@@ -1,0 +1,221 @@
+:root {
+  --bg: #fff1f0;
+  --card: rgba(255, 255, 255, 0.78);
+  --text: #4a1f24;
+  --primary: #d0011b;
+  --primary-dark: #a00016;
+  --gold: #c9963e;
+  --line: #efbcc3;
+  --shadow: 0 14px 30px rgba(208, 1, 27, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  background:
+    radial-gradient(circle at top, #ffcdcd 0%, var(--bg) 52%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(201, 150, 62, 0.06) 0 8px,
+      rgba(201, 150, 62, 0) 8px 18px
+    );
+  min-height: 100vh;
+}
+
+.invite {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 16px 14px calc(30px + env(safe-area-inset-bottom));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+  margin: 12px 0;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgba(201, 150, 62, 0.45), rgba(201, 150, 62, 0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 30px 18px;
+  background: linear-gradient(165deg, #fff8f6 0%, #ffcfd2 100%);
+}
+
+.eyebrow {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 12px;
+  color: #b56b2a;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: clamp(30px, 8vw, 40px);
+  color: #b4001a;
+  text-shadow: 0 2px 10px rgba(212, 116, 46, 0.25);
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #b3001b;
+}
+
+.names,
+.date {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin: 9px 0;
+  line-height: 1.45;
+}
+
+.timeline span {
+  display: inline-block;
+  min-width: 52px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d0011b 0%, #b3001b 65%, #a00016 100%);
+  color: #fff;
+  padding: 11px 18px;
+  margin-top: 12px;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(201, 31, 55, 0.28);
+  border: 1px solid rgba(201, 150, 62, 0.35);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-light {
+  background: linear-gradient(180deg, #fff 0%, #fff5f0 100%);
+  color: var(--primary-dark);
+  border: 1px solid #e7b38a;
+  box-shadow: none;
+}
+
+.action-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tip {
+  font-size: 13px;
+  color: #8b4f57;
+  margin-top: 10px;
+}
+
+.music-btn {
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 242, 236, 0.9));
+  color: var(--primary-dark);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(201, 150, 62, 0.35);
+}
+
+.music-btn.playing span {
+  display: inline-block;
+  animation: spin 2.4s linear infinite;
+}
+
+dialog {
+  width: min(92vw, 420px);
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+#rsvpForm {
+  padding: 16px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  border: 1px solid #e7b3bb;
+  border-radius: 10px;
+  padding: 10px;
+  font: inherit;
+}
+
+menu {
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .invite {
+    padding-top: 24px;
+  }
+}
