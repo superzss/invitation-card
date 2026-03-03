@@ -73,6 +73,39 @@
         background: linear-gradient(165deg, #fff8f6 0%, #ffcfd2 100%);
       }
 
+      .couple-photo {
+        width: min(72vw, 260px);
+        aspect-ratio: 3 / 4;
+        margin: 0 auto 16px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.28);
+        box-shadow:
+          0 14px 26px rgba(201, 31, 55, 0.2),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .couple-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 36%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0) 62%, rgba(255, 205, 205, 0.2) 100%);
+        pointer-events: none;
+      }
+
+      .couple-image,
+      .couple-illustration {
+        width: 112%;
+        height: 112%;
+        display: block;
+        object-fit: cover;
+        transform: scale(1.02) translateY(2px);
+        filter: saturate(1.08) contrast(1.03);
+      }
+
       .eyebrow {
         letter-spacing: 0.12em;
         text-transform: uppercase;
@@ -233,6 +266,9 @@
 
     <main class="invite">
       <section class="card hero">
+        <div class="couple-photo" aria-label="新人照片占位">
+          <img class="couple-image" src="pic/参考图.jpg" alt="新人照片" loading="eager" />
+        </div>
         <p class="eyebrow">Wedding Invitation</p>
         <h1>我们结婚啦</h1>
         <p class="names">新郎：张三 &nbsp;·&nbsp; 新娘：李四</p>
