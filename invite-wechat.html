@@ -74,9 +74,9 @@
       }
 
       .couple-photo {
-        width: min(72vw, 260px);
+        width: min(60vw, 220px);
         aspect-ratio: 3 / 4;
-        margin: 0 auto 16px;
+        margin: 0 auto 12px;
         border-radius: 20px;
         background: rgba(255, 255, 255, 0.28);
         box-shadow:
@@ -115,8 +115,8 @@
       }
 
       h1 {
-        margin: 10px 0;
-        font-size: clamp(30px, 8vw, 40px);
+        margin: 8px 0;
+        font-size: clamp(28px, 7.2vw, 38px);
         color: #b4001a;
         text-shadow: 0 2px 10px rgba(212, 116, 46, 0.25);
       }
@@ -129,7 +129,7 @@
 
       .names,
       .date {
-        margin: 8px 0;
+        margin: 6px 0;
         font-size: 15px;
       }
 
@@ -153,7 +153,7 @@
         background: linear-gradient(135deg, #d0011b 0%, #b3001b 65%, #a00016 100%);
         color: #fff;
         padding: 11px 18px;
-        margin-top: 12px;
+        margin-top: 8px;
         font-weight: 600;
         box-shadow: 0 8px 18px rgba(201, 31, 55, 0.28);
         border: 1px solid rgba(201, 150, 62, 0.35);
@@ -251,6 +251,46 @@
       @media (min-width: 768px) {
         .invite {
           padding-top: 24px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .invite {
+          padding-top: 8px;
+        }
+
+        .hero {
+          min-height: calc(100svh - 32px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          gap: 8px;
+          padding: 18px 14px 16px;
+        }
+
+        .couple-photo {
+          width: min(58vw, 205px);
+          margin-bottom: 8px;
+        }
+
+        .eyebrow {
+          font-size: 11px;
+        }
+
+        h1 {
+          margin: 4px 0;
+          font-size: clamp(24px, 8vw, 32px);
+        }
+
+        .names,
+        .date {
+          margin: 2px 0;
+          font-size: 14px;
+        }
+
+        .hero .btn {
+          margin-top: 4px;
         }
       }
     </style>
